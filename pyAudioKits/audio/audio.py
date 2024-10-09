@@ -97,7 +97,7 @@ class Audio(time_axis_ds):
         halfSteps: An int object for how much halfSteps to shift. 
         return: An Audio object. 
         """
-        return Audio(librosa.effects.pitch_shift(self.samples, self.sr, n_steps=halfSteps),self.sr)
+        return Audio(librosa.effects.pitch_shift(y=self.samples, sr=self.sr, n_steps=halfSteps),self.sr)
 
     def resample(self,newRate):
         """Resample the audio with a new sample rate.
